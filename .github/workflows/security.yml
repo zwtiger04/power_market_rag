@@ -1,0 +1,358 @@
+name: Security Scanning
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # 매주 월요일 오전 2시에 보안 스캔 실행
+    - cron: '0 2 * * 1'
+
+jobs:
+  # 의존성 보안 검사
+  dependency-security:
+    runs-on: ubuntu-latest
+    name: 의존성 보안 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install safety bandit
+        pip install -r requirements.txt
+    
+    - name: Safety 보안 검사
+      run: |
+        safety check --json --output safety-report.json || true
+        safety check
+    
+    - name: 보안 검사 결과 업로드
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: safety-report
+        path: safety-report.json
+
+  # 코드 보안 검사
+  code-security:
+    runs-on: ubuntu-latest
+    name: 코드 보안 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Bandit 보안 검사
+      run: |
+        pip install bandit[toml]
+        bandit -r . -f json -o bandit-report.json || true
+        bandit -r . -ll
+    
+    - name: 보안 검사 결과 업로드
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: bandit-report
+        path: bandit-report.json
+
+  # 컨테이너 보안 검사
+  container-security:
+    runs-on: ubuntu-latest
+    name: 컨테이너 보안 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Docker 이미지 빌드
+      run: docker build -t power-market-rag:security-scan .
+    
+    - name: Trivy 컨테이너 스캔
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'power-market-rag:security-scan'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+    
+    - name: Trivy 파일시스템 스캔
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-fs-results.sarif'
+    
+    - name: 보안 스캔 결과 업로드
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+    
+    - name: 파일시스템 스캔 결과 업로드
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-fs-results.sarif'
+
+  # 비밀 정보 검사
+  secrets-scan:
+    runs-on: ubuntu-latest
+    name: 비밀 정보 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: TruffleHog 비밀 검사
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+
+  # OWASP ZAP 동적 보안 테스트
+  dynamic-security:
+    runs-on: ubuntu-latest
+    name: 동적 보안 테스트 (OWASP ZAP)
+    if: github.event_name == 'schedule' || contains(github.event.head_commit.message, '[security-scan]')
+    
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_DB: power_market_rag_test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test123
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: 테스트 환경 설정
+      run: |
+        cp .env.example .env
+        echo "DATABASE_URL=postgresql://test:test123@localhost:5432/power_market_rag_test" >> .env
+        echo "REDIS_URL=redis://localhost:6379/0" >> .env
+        echo "JWT_SECRET_KEY=test-secret-key-for-security-scan" >> .env
+    
+    - name: 애플리케이션 시작
+      run: |
+        python -m uvicorn api.api_server:app --host 0.0.0.0 --port 8000 &
+        sleep 10
+    
+    - name: ZAP Baseline Scan
+      uses: zaproxy/action-baseline@v0.10.0
+      with:
+        target: 'http://localhost:8000'
+        rules_file_name: '.zap/rules.tsv'
+        cmd_options: '-a'
+    
+    - name: ZAP 결과 업로드
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: zap-report
+        path: report_html.html
+
+  # License 검사
+  license-check:
+    runs-on: ubuntu-latest
+    name: 라이선스 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: pip-licenses 설치
+      run: pip install pip-licenses
+    
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: 라이선스 검사
+      run: |
+        pip-licenses --format=json --output-file=licenses.json
+        pip-licenses --format=table
+    
+    - name: 허용되지 않은 라이선스 검사
+      run: |
+        python -c "
+        import json
+        with open('licenses.json') as f:
+            licenses = json.load(f)
+        
+        # 허용되지 않은 라이선스 목록
+        forbidden_licenses = ['GPL-3.0', 'AGPL-3.0', 'LGPL-3.0']
+        
+        violations = []
+        for package in licenses:
+            if package['License'] in forbidden_licenses:
+                violations.append(f'{package[\"Name\"]} ({package[\"License\"]})')
+        
+        if violations:
+            print('⚠️  허용되지 않은 라이선스 발견:')
+            for violation in violations:
+                print(f'  - {violation}')
+            exit(1)
+        else:
+            print('✅ 모든 라이선스가 허용됨')
+        "
+    
+    - name: 라이선스 보고서 업로드
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: license-report
+        path: licenses.json
+
+  # 보안 정책 검사
+  security-policy:
+    runs-on: ubuntu-latest
+    name: 보안 정책 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 보안 정책 파일 검사
+      run: |
+        echo "📋 보안 정책 파일 검사..."
+        
+        # 필수 보안 파일들 확인
+        files_to_check=(
+          "SECURITY.md"
+          ".github/SECURITY.md"
+          ".gitignore"
+          ".env.example"
+          "pyproject.toml"
+        )
+        
+        missing_files=()
+        for file in "${files_to_check[@]}"; do
+          if [[ ! -f "$file" ]]; then
+            missing_files+=("$file")
+          fi
+        done
+        
+        if [[ ${#missing_files[@]} -gt 0 ]]; then
+          echo "⚠️  누락된 보안 관련 파일:"
+          printf '  - %s\n' "${missing_files[@]}"
+        else
+          echo "✅ 모든 필수 보안 파일이 존재함"
+        fi
+    
+    - name: 환경 변수 검사
+      run: |
+        echo "🔍 환경 변수 보안 검사..."
+        
+        # .env 파일이 있으면 안됨 (실제 환경 변수)
+        if [[ -f ".env" ]]; then
+          echo "❌ .env 파일이 저장소에 포함되어 있습니다!"
+          exit 1
+        fi
+        
+        # .env.example에 실제 비밀 값이 있는지 확인
+        if [[ -f ".env.example" ]]; then
+          if grep -q "your_.*_here\|change.*production\|example\|test" .env.example; then
+            echo "✅ .env.example에 플레이스홀더 값 사용"
+          else
+            echo "⚠️  .env.example에 실제 비밀 값이 포함될 수 있습니다"
+          fi
+        fi
+    
+    - name: Docker 보안 설정 검사
+      run: |
+        echo "🐳 Docker 보안 설정 검사..."
+        
+        if [[ -f "Dockerfile" ]]; then
+          # 루트 사용자 사용 검사
+          if grep -q "USER root\|^USER 0" Dockerfile; then
+            echo "⚠️  Dockerfile에서 root 사용자 사용 발견"
+          fi
+          
+          # 비밀 정보 복사 검사
+          if grep -q "COPY.*\.env\|ADD.*\.env" Dockerfile; then
+            echo "❌ Dockerfile에서 .env 파일 복사 발견!"
+            exit 1
+          fi
+          
+          echo "✅ Docker 보안 설정 검사 완료"
+        fi
+
+  # 종합 보안 보고서
+  security-summary:
+    runs-on: ubuntu-latest
+    name: 보안 검사 결과 요약
+    needs: [dependency-security, code-security, container-security, license-check, security-policy]
+    if: always()
+    
+    steps:
+    - name: 보안 검사 결과 요약
+      run: |
+        echo "# 🔒 보안 검사 결과 요약" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| 검사 항목 | 상태 |" >> $GITHUB_STEP_SUMMARY
+        echo "|----------|------|" >> $GITHUB_STEP_SUMMARY
+        echo "| 의존성 보안 | ${{ needs.dependency-security.result == 'success' && '✅ 통과' || '❌ 실패' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| 코드 보안 | ${{ needs.code-security.result == 'success' && '✅ 통과' || '❌ 실패' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| 컨테이너 보안 | ${{ needs.container-security.result == 'success' && '✅ 통과' || '❌ 실패' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| 라이선스 검사 | ${{ needs.license-check.result == 'success' && '✅ 통과' || '❌ 실패' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| 보안 정책 | ${{ needs.security-policy.result == 'success' && '✅ 통과' || '❌ 실패' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # 전체 결과 결정
+        if [[ "${{ needs.dependency-security.result }}" == "success" && \
+              "${{ needs.code-security.result }}" == "success" && \
+              "${{ needs.container-security.result }}" == "success" && \
+              "${{ needs.license-check.result }}" == "success" && \
+              "${{ needs.security-policy.result }}" == "success" ]]; then
+          echo "## ✅ 모든 보안 검사 통과" >> $GITHUB_STEP_SUMMARY
+          echo "시스템이 보안 요구사항을 만족합니다." >> $GITHUB_STEP_SUMMARY
+        else
+          echo "## ⚠️  일부 보안 검사 실패" >> $GITHUB_STEP_SUMMARY
+          echo "보안 이슈를 검토하고 수정해주세요." >> $GITHUB_STEP_SUMMARY
+        fi

@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # 개발용 웹 애플리케이션
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: power_market_web_dev
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      - REDIS_URL=redis://redis:6379/0
+      - VECTOR_DB_PATH=/app/vector_db
+      - LOG_LEVEL=DEBUG
+      - DEBUG=true
+    volumes:
+      - .:/app  # 코드 변경 실시간 반영
+      - ./logs:/app/logs
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - power_market_network
+    restart: "no"  # 개발 중에는 자동 재시작 비활성화
+    command: ["uvicorn", "api.api_server:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  # PostgreSQL (개발용)
+  postgres:
+    image: postgres:15-alpine
+    container_name: power_market_postgres_dev
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-power_market_rag_dev}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-devpassword}
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - power_market_network
+
+  # Redis (개발용)
+  redis:
+    image: redis:7-alpine
+    container_name: power_market_redis_dev
+    ports:
+      - "6379:6379"
+    networks:
+      - power_market_network
+
+networks:
+  power_market_network:
+    driver: bridge
+
+volumes:
+  postgres_data_dev:
+    driver: local

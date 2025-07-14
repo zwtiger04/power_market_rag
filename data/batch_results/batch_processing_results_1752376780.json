@@ -1,0 +1,335 @@
+{
+  "start_time": 1752376601.3177102,
+  "documents_processed": [
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710).pdf",
+      "document_name": "전력시장운영규칙(250710).pdf",
+      "start_time": 1752376601.317718,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710).pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 86.67028856277466
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별지서식.pdf",
+      "document_name": "전력시장운영규칙(250710)_별지서식.pdf",
+      "start_time": 1752376687.988015,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별지서식.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 17.48082971572876
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표1.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표1.pdf",
+      "start_time": 1752376705.4688528,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표1.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 16.818280458450317
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표10_연료제약발전기운영.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표10_연료제약발전기운영.pdf",
+      "start_time": 1752376722.287141,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표10_연료제약발전기운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.5716910362243652
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표11_실시간 급전운영 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표11_실시간 급전운영 절차.pdf",
+      "start_time": 1752376722.8588405,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표11_실시간 급전운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.5357811450958252
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표12_비상시 급전지시 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표12_비상시 급전지시 절차.pdf",
+      "start_time": 1752376723.394631,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표12_비상시 급전지시 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.7100625038146973
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표13_계통운영시스템 운영 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표13_계통운영시스템 운영 절차.pdf",
+      "start_time": 1752376724.104702,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표13_계통운영시스템 운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 1.5003769397735596
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표14_고장파급방지시스템 적용 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표14_고장파급방지시스템 적용 절차.pdf",
+      "start_time": 1752376725.6050863,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표14_고장파급방지시스템 적용 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.221055269241333
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표15_기기번호 부여 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표15_기기번호 부여 절차.pdf",
+      "start_time": 1752376725.826158,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표15_기기번호 부여 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.7164456844329834
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표16_계통보호절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표16_계통보호절차.pdf",
+      "start_time": 1752376726.5426116,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표16_계통보호절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.6838529109954834
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표17_전력설비정지관리절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표17_전력설비정지관리절차.pdf",
+      "start_time": 1752376727.226472,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표17_전력설비정지관리절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.15549206733703613
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표18_발전기정지및휴전업무절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표18_발전기정지및휴전업무절차.pdf",
+      "start_time": 1752376727.3819714,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표18_발전기정지및휴전업무절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.9455180168151855
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표19_보조서비스절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표19_보조서비스절차.pdf",
+      "start_time": 1752376728.3274965,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표19_보조서비스절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.3846724033355713
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표2.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표2.pdf",
+      "start_time": 1752376728.7121766,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표2.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 6.299042463302612
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표20_발변전소 주변압기 탭 정정 및 유효접지 검토절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표20_발변전소 주변압기 탭 정정 및 유효접지 검토절차.pdf",
+      "start_time": 1752376735.011227,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표20_발변전소 주변압기 탭 정정 및 유효접지 검토절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.17582464218139648
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표21_발전기병렬운전 및 공급방안 업무절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표21_발전기병렬운전 및 공급방안 업무절차.pdf",
+      "start_time": 1752376735.1870596,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표21_발전기병렬운전 및 공급방안 업무절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.12649130821228027
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표22_시장시스템운영절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표22_시장시스템운영절차.pdf",
+      "start_time": 1752376735.3135588,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표22_시장시스템운영절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.24091625213623047
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표23_전력가격 안정 등을 위한 정산금 조정.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표23_전력가격 안정 등을 위한 정산금 조정.pdf",
+      "start_time": 1752376735.5544834,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표23_전력가격 안정 등을 위한 정산금 조정.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.36316394805908203
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표24_비상시 전력시장운영 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표24_비상시 전력시장운영 절차.pdf",
+      "start_time": 1752376735.9176557,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표24_비상시 전력시장운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.256436824798584
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표25_공급인증서 거래시장 운영, 정산 및 결제 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표25_공급인증서 거래시장 운영, 정산 및 결제 절차.pdf",
+      "start_time": 1752376736.1741,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표25_공급인증서 거래시장 운영, 정산 및 결제 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.7258245944976807
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표26_수요반응자원 정산 규칙.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표26_수요반응자원 정산 규칙.pdf",
+      "start_time": 1752376736.8999314,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표26_수요반응자원 정산 규칙.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 3.931939125061035
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표28_고객기준부하 산정 기준.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표28_고객기준부하 산정 기준.pdf",
+      "start_time": 1752376740.8318777,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표28_고객기준부하 산정 기준.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.2770092487335205
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표30_정부승인차액계약 처리 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표30_정부승인차액계약 처리 절차.pdf",
+      "start_time": 1752376741.1089025,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표30_정부승인차액계약 처리 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.6132786273956299
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표31_발전기 등 특성시험 관리 지침.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표31_발전기 등 특성시험 관리 지침.pdf",
+      "start_time": 1752376741.7221878,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표31_발전기 등 특성시험 관리 지침.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.8504869937896729
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표32_풍력, 태양광, 연료전지에 관한 계통운영 및 관리 절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표32_풍력, 태양광, 연료전지에 관한 계통운영 및 관리 절차.pdf",
+      "start_time": 1752376742.5726838,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표32_풍력, 태양광, 연료전지에 관한 계통운영 및 관리 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.5624644756317139
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표33_전력시장 제도개선 제주 시범사업에 대한 정산기준.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표33_전력시장 제도개선 제주 시범사업에 대한 정산기준.pdf",
+      "start_time": 1752376743.1351564,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표33_전력시장 제도개선 제주 시범사업에 대한 정산기준.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 3.197751522064209
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표34_전력시장 제도개선 제주 시범사업 발전계획 수립절차.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표34_전력시장 제도개선 제주 시범사업 발전계획 수립절차.pdf",
+      "start_time": 1752376746.3329148,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표34_전력시장 제도개선 제주 시범사업 발전계획 수립절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.8201992511749268
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표3_계통운영.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표3_계통운영.pdf",
+      "start_time": 1752376747.1531215,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표3_계통운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.7559709548950195
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표4_입찰운영.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표4_입찰운영.pdf",
+      "start_time": 1752376747.9090989,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표4_입찰운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.9369418621063232
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표5_수요예측.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표5_수요예측.pdf",
+      "start_time": 1752376748.8460488,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표5_수요예측.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.14455103874206543
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표7_계량기.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표7_계량기.pdf",
+      "start_time": 1752376748.9906063,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표7_계량기.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 1.0744507312774658
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표8_정산결제.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표8_정산결제.pdf",
+      "start_time": 1752376750.065076,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표8_정산결제.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 1.2972095012664795
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_별표9_발전계획_계통한계가격_공개.pdf",
+      "document_name": "전력시장운영규칙(250710)_별표9_발전계획_계통한계가격_공개.pdf",
+      "start_time": 1752376751.362293,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_별표9_발전계획_계통한계가격_공개.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 0.9233839511871338
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_본문.pdf",
+      "document_name": "전력시장운영규칙(250710)_본문.pdf",
+      "start_time": 1752376752.2856836,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_본문.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 19.15923523902893
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_부록.pdf",
+      "document_name": "전력시장운영규칙(250710)_부록.pdf",
+      "start_time": 1752376771.4449263,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_부록.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 5.807181358337402
+    },
+    {
+      "document_path": "data/documents/전력시장운영규칙(250710)_부칙.pdf",
+      "document_name": "전력시장운영규칙(250710)_부칙.pdf",
+      "start_time": 1752376777.2521155,
+      "success": false,
+      "error": "Error processing 전력시장운영규칙(250710)_부칙.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+      "processing_time": 2.8784985542297363
+    }
+  ],
+  "success_count": 0,
+  "error_count": 36,
+  "errors": [
+    "Error processing 전력시장운영규칙(250710).pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별지서식.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표1.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표10_연료제약발전기운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표11_실시간 급전운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표12_비상시 급전지시 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표13_계통운영시스템 운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표14_고장파급방지시스템 적용 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표15_기기번호 부여 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표16_계통보호절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표17_전력설비정지관리절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표18_발전기정지및휴전업무절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표19_보조서비스절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표2.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표20_발변전소 주변압기 탭 정정 및 유효접지 검토절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표21_발전기병렬운전 및 공급방안 업무절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표22_시장시스템운영절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표23_전력가격 안정 등을 위한 정산금 조정.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표24_비상시 전력시장운영 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표25_공급인증서 거래시장 운영, 정산 및 결제 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표26_수요반응자원 정산 규칙.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표28_고객기준부하 산정 기준.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표30_정부승인차액계약 처리 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표31_발전기 등 특성시험 관리 지침.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표32_풍력, 태양광, 연료전지에 관한 계통운영 및 관리 절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표33_전력시장 제도개선 제주 시범사업에 대한 정산기준.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표34_전력시장 제도개선 제주 시범사업 발전계획 수립절차.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표3_계통운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표4_입찰운영.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표5_수요예측.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표7_계량기.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표8_정산결제.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_별표9_발전계획_계통한계가격_공개.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_본문.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_부록.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'",
+    "Error processing 전력시장운영규칙(250710)_부칙.pdf: VectorEngine.add_document() got an unexpected keyword argument 'include_multimodal'"
+  ],
+  "end_time": 1752376780.1306186,
+  "total_duration": 178.812908411026
+}

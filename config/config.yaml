@@ -1,0 +1,40 @@
+# RAG 시스템 설정 파일
+
+# 벡터 데이터베이스 설정
+VECTOR_DB_TYPE: "chromadb"  # chromadb 또는 faiss
+VECTOR_DB_PATH: "./vector_db"
+COLLECTION_NAME: "power_market_docs"
+
+# 임베딩 모델 설정 (고성능 모델로 업그레이드)
+EMBEDDING_MODEL: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"  # 768차원, 더 높은 성능
+EMBEDDING_DIMENSION: 768
+# 대안 모델들:
+# - "BAAI/bge-m3": 다국어 지원, 1024차원, 최신 고성능
+# - "sentence-transformers/all-mpnet-base-v2": 영어 특화, 768차원
+
+# 문서 처리 설정
+CHUNK_SIZE: 1000  # 텍스트를 나누는 크기
+CHUNK_OVERLAP: 200  # 겹치는 부분 크기
+MAX_TOKENS: 4000  # 최대 토큰 수
+
+# 검색 설정
+TOP_K: 5  # 상위 몇 개 문서를 가져올지
+SIMILARITY_THRESHOLD: 0.7  # 유사도 임계값
+
+# API 설정
+API_HOST: "0.0.0.0"
+API_PORT: 8000
+DEBUG: true
+
+# 로그 설정
+LOG_LEVEL: "INFO"
+LOG_FILE: "./logs/rag_system.log"
+
+# 전력시장 특화 설정
+POWER_MARKET_DOMAINS:
+  - "발전계획"
+  - "계통운영"
+  - "전력거래"
+  - "시장운영"
+  - "예비력"
+  - "송전제약"

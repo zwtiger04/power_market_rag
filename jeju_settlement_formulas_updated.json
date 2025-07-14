@@ -1,0 +1,379 @@
+{
+  "title": "제주 시범사업 급전가능재생에너지자원 정산 공식",
+  "source": "전력시장운영규칙 별표 33",
+  "date_extracted": "2025-07-14",
+  "formulas": {
+    "renewable_energy_settlement": {
+      "name": "급전가능재생에너지자원 에너지정산금",
+      "category": "에너지정산금",
+      "resource_type": "급전가능재생에너지자원",
+      "formula_text": "MEPi,t = DA_MEP i,t + ∑q RT_MEP i,t,q",
+      "variables": [
+        {
+          "symbol": "MEPi,t",
+          "name": "에너지정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "DA_MEP i,t",
+          "name": "하루전에너지정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 하루전에너지시장 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "RT_MEP i,t,q",
+          "name": "실시간에너지정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t) 내 구간(q)별 실시간에너지시장 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 하루전에너지정산금 계산: DA_MEP i,t = DA_MP i,t × DA_SE i,t × 1h × 1,000",
+        "2. 15분 구간별 발전량 비중 계산: TPR_E i,t,q = MGO i,t,q / MGO i,t (∑TPR_E = 1.0)",
+        "3. 15분 구간별 실시간정산금 계산: RT_MEP i,t,q = RT_MP i,t,q × (MGO i,t - DA_SE i,t × 1h) × TPR_E i,t,q × 1,000",
+        "4. 실시간에너지정산금 = ∑(q=1~4) RT_MEP i,t,q",
+        "5. 총 에너지정산금 = 하루전에너지정산금 + 실시간에너지정산금"
+      ],
+      "conditions": [
+        "고정가격계약 물량과 그 외 물량으로 구분하여 계산",
+        "고정가격계약 물량: Min(EP i,t, UPFP i,j,c,t/1,000) × MGO i,j,t × CR i,j,c,t",
+        "그 외 물량: EP i,t × MGO i,j,t × (1 - ∑c CRi,j,c,t)",
+        "실시간 정산은 15분 구간별(q=1~4)로 계산하여 합산",
+        "t: 거래시간 (예: t=02는 01:00~02:00), q: 15분구간 (q=1~4)"
+      ],
+      "decimal_handling": {
+        "계량전력량": 3,
+        "가격": 2,
+        "비율": 3
+      }
+    },
+    "renewable_variable_cost_settlement": {
+      "name": "급전가능재생에너지자원 변동비보전정산금",
+      "category": "변동비보전정산금",
+      "resource_type": "급전가능재생에너지자원",
+      "formula_text": "MWP i,t = Max(SCMWG i,t - MPMWG i,t, 0) × SCMWG_FLAG i,t",
+      "variables": [
+        {
+          "symbol": "MWP i,t",
+          "name": "변동비보전정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 변동비보전정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "SCMWG i,t",
+          "name": "변동비",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 변동비보전정산금 지급 영역에 대한 변동비",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "MPMWG i,t",
+          "name": "에너지정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 변동비보전정산금 지급 영역에 대한 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "SCMWG_FLAG i,t",
+          "name": "지급플래그",
+          "unit": "0/1",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 변동비보전정산금 지급 플래그",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 변동비 계산: SCMWG i,t = ∑MW RT_OFFER_PRICE i,t(MW) × MWG_UP i,t × 1,000",
+        "2. 에너지정산금 계산: MPMWG i,t = DA_MEP i,t + RT_MEP i,t,q",
+        "3. 변동비보전정산금 = Max(변동비 - 에너지정산금, 0) × 지급플래그"
+      ],
+      "conditions": [
+        "공급가능용량 이내로 발전한 전력량에 대해서만 적용",
+        "에너지정산금으로 입찰비용을 회수할 수 없는 경우에만 지급",
+        "급전지시로 공급가능용량 초과 발전 시 전체 전력량에 대한 입찰비용 차액 정산"
+      ],
+      "decimal_handling": {
+        "변동비": 0,
+        "정산금": 0
+      }
+    },
+    "renewable_expected_profit_settlement": {
+      "name": "급전가능재생에너지자원 기대이익정산금",
+      "category": "기대이익정산금",
+      "resource_type": "급전가능재생에너지자원",
+      "formula_text": "MAPi,t = Max(E_MAP i,t - MWP i,t, 0)",
+      "variables": [
+        {
+          "symbol": "MAPi,t",
+          "name": "기대이익정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 기대이익정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "E_MAP i,t",
+          "name": "에너지기대이익정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 에너지기대이익정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "MWP i,t",
+          "name": "변동비보전정산금",
+          "unit": "원",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 변동비보전정산금",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 에너지기대이익정산금 계산: E_MAP i,t = MPMAG i,t - SCMAG i,t",
+        "2. 기대이익정산금 = Max(에너지기대이익정산금 - 변동비보전정산금, 0)"
+      ],
+      "conditions": [
+        "전력거래소의 급전지시에 의해 하루전에너지계획량과 다르게 운전한 경우",
+        "하루전발전계획으로 발전했을 시의 기대이익을 보전하기 위한 목적",
+        "허용오차 이내인 경우: |Min(DA_SE i,t × 1h, RA i,t) - MGO i,t| ≤ ε i,t 이면 MAP i,t = 0"
+      ],
+      "decimal_handling": {
+        "정산금": 0
+      }
+    },
+    "day_ahead_energy_price": {
+      "name": "하루전에너지가격",
+      "category": "가격계산",
+      "resource_type": "급전가능재생에너지자원",
+      "formula_text": "DA_MP i,t = DA_SMP i,t × STLF i,t",
+      "variables": [
+        {
+          "symbol": "DA_MP i,t",
+          "name": "하루전에너지거래가격",
+          "unit": "원/kWh",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 하루전에너지시장 에너지 거래가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "DA_SMP i,t",
+          "name": "하루전에너지가격",
+          "unit": "원/kWh",
+          "description": "거래시간(t)별 하루전에너지가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "STLF i,t",
+          "name": "손실계수",
+          "unit": "비율",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t)별 손실계수",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 하루전에너지거래가격 = 하루전에너지가격 × 손실계수"
+      ],
+      "conditions": [
+        "손실계수는 송전손실을 반영한 계수"
+      ],
+      "decimal_handling": {
+        "가격": 4,
+        "손실계수": 6
+      }
+    },
+    "real_time_energy_price": {
+      "name": "실시간에너지가격",
+      "category": "가격계산",
+      "resource_type": "급전가능재생에너지자원",
+      "formula_text": "RT_MP i,t,q = RT_SMP i,t,q × STLF i,t,q",
+      "variables": [
+        {
+          "symbol": "RT_MP i,t,q",
+          "name": "실시간에너지거래가격",
+          "unit": "원/kWh",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t) 내 구간(q)별 실시간에너지시장 에너지 거래가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "RT_SMP i,t,q",
+          "name": "실시간에너지가격",
+          "unit": "원/kWh",
+          "description": "거래시간(t) 내 구간(q)별 실시간에너지가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "STLF i,t,q",
+          "name": "손실계수",
+          "unit": "비율",
+          "description": "급전가능재생에너지자원(i)의 거래시간(t) 내 구간(q)별 손실계수",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 실시간에너지거래가격 = 실시간에너지가격 × 손실계수"
+      ],
+      "conditions": [
+        "5분 단위 구간별로 계산"
+      ],
+      "decimal_handling": {
+        "가격": 4,
+        "손실계수": 6
+      }
+    },
+    "aggregated_energy_settlement": {
+      "name": "급전가능집합전력자원 에너지정산금",
+      "category": "에너지정산금",
+      "resource_type": "급전가능집합전력자원",
+      "formula_text": "MEPi,t = DA_MEP i,t + ∑q RT_MEP i,t,q",
+      "variables": [
+        {
+          "symbol": "MEPi,t",
+          "name": "에너지정산금",
+          "unit": "원",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t)별 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "DA_MEP i,t",
+          "name": "하루전에너지정산금",
+          "unit": "원",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t)별 하루전에너지시장 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "RT_MEP i,t,q",
+          "name": "실시간에너지정산금",
+          "unit": "원",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t) 내 구간(q)별 실시간에너지시장 에너지정산금",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 하루전에너지시장 입찰대상 발전기의 경우: DA_MEP i,t = DA_MP i,t × DA_SE i,t × 1,000 × 1h",
+        "2. 그 외의 경우: DA_MEP i,t = DA_MP i,t × MGO i,t × 1,000 × 1h",
+        "3. 15분 구간별 발전량 비중 계산: TPR_E i,t,q = MGO i,t,q / MGO i,t (∑TPR_E = 1.0)",
+        "4. 하루전에너지시장 입찰대상 발전기의 경우: RT_MEP i,t,q = RT_MP i,t,q × (MGO i,t - DA_SE i,t × 1h) × TPR_E i,t,q × 1,000",
+        "5. 그 외의 경우: RT_MEP i,t,q = 0",
+        "6. 실시간에너지정산금 = ∑(q=1~4) RT_MEP i,t,q",
+        "7. 총 에너지정산금 = 하루전에너지정산금 + 실시간에너지정산금"
+      ],
+      "conditions": [
+        "급전가능집합전력자원의 보유자원에 해당하는 비중앙급전발전기 및 비중앙급전전기저장장치에 대해서는 정산금을 지급하지 아니함",
+        "제16.3.1조의 하루전에너지시장 입찰 대상 여부에 따라 계산 방식이 다름",
+        "입찰 대상이 아닌 발전기: 전체 계량전력량을 하루전에너지가격으로 정산",
+        "입찰 대상이 아닌 발전기: 실시간에너지시장 정산금은 0",
+        "실시간 정산은 15분 구간별(q=1~4)로 계산하여 합산",
+        "t: 거래시간 (예: t=02는 01:00~02:00), q: 15분구간 (q=1~4)"
+      ],
+      "decimal_handling": {
+        "계량전력량": 3,
+        "가격": 2,
+        "정산금": 0
+      }
+    },
+    "aggregated_day_ahead_price": {
+      "name": "급전가능집합전력자원 하루전에너지가격",
+      "category": "가격계산",
+      "resource_type": "급전가능집합전력자원",
+      "formula_text": "DA_MP i,t = DA_SMP i,t × STLF i,t",
+      "variables": [
+        {
+          "symbol": "DA_MP i,t",
+          "name": "하루전에너지거래가격",
+          "unit": "원/kWh",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t)별 하루전에너지시장 에너지 거래가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "DA_SMP i,t",
+          "name": "하루전에너지가격",
+          "unit": "원/kWh",
+          "description": "거래시간(t)별 하루전에너지가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "STLF i,t",
+          "name": "손실계수",
+          "unit": "비율",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t)별 손실계수",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 하루전에너지거래가격 = 하루전에너지가격 × 손실계수"
+      ],
+      "conditions": [
+        "급전가능집합전력자원에 속한 비중앙급전발전기 및 비중앙급전전기저장장치에 적용"
+      ],
+      "decimal_handling": {
+        "가격": 4,
+        "손실계수": 6
+      }
+    },
+    "aggregated_real_time_price": {
+      "name": "급전가능집합전력자원 실시간에너지가격",
+      "category": "가격계산",
+      "resource_type": "급전가능집합전력자원",
+      "formula_text": "RT_MP i,t,q = RT_SMP i,t,q × STLF i,t,q",
+      "variables": [
+        {
+          "symbol": "RT_MP i,t,q",
+          "name": "실시간에너지거래가격",
+          "unit": "원/kWh",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t) 내 구간(q)별 실시간에너지시장 에너지 거래가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "RT_SMP i,t,q",
+          "name": "실시간에너지가격",
+          "unit": "원/kWh",
+          "description": "거래시간(t) 내 구간(q)별 실시간에너지가격",
+          "decimal_places": null,
+          "constraints": null
+        },
+        {
+          "symbol": "STLF i,t,q",
+          "name": "손실계수",
+          "unit": "비율",
+          "description": "비중앙급전발전기 및 비중앙급전전기저장장치(i)의 거래시간(t) 내 구간(q)별 손실계수",
+          "decimal_places": null,
+          "constraints": null
+        }
+      ],
+      "calculation_steps": [
+        "1. 실시간에너지거래가격 = 실시간에너지가격 × 손실계수"
+      ],
+      "conditions": [
+        "하루전에너지시장 입찰대상 발전기에만 적용",
+        "입찰 대상이 아닌 발전기는 실시간 정산 없음"
+      ],
+      "decimal_handling": {
+        "가격": 4,
+        "손실계수": 6
+      }
+    }
+  }
+}

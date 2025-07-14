@@ -1,0 +1,428 @@
+{
+  "document_id": "전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차",
+  "extraction_timestamp": "2025-07-13T12:01:30.702449",
+  "power_market_metadata": {
+    "market_entities": {
+      "participants": [
+        {
+          "text": "전력거래소",
+          "start_pos": 111,
+          "end_pos": 116,
+          "context": "템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 351,
+          "end_pos": 356,
+          "context": " 전력거래시스템 운영\n2.1\n시스템의 설치\n2.1.1\n전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 829,
+          "end_pos": 834,
+          "context": "간 연속 가동을 원칙으로 한다\n1\n24\n.\n2.3.2\n전력거래소는 시스템의 운영상 중대한 장애 발생 또는 업무상 시스"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1000,
+          "end_pos": 1005,
+          "context": "에 통지 없이 시스템을 정지시킬 수 있다.\n2.3.3\n전력거래소는 예기치 못한 사고로부터 시스템 정보의 보존 및 손상"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1113,
+          "end_pos": 1118,
+          "context": "수행한다.\n\n868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1186,
+          "end_pos": 1191,
+          "context": "부대설비의 예방정비를 주기적으로 실시한다.\n2.3.5\n전력거래소는 실시간 사용전력량 데이터의 취득 상황을 수시로 확인"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1415,
+          "end_pos": 1420,
+          "context": "템과의 접속을 위한 제반 요\n구사항의 준수 등을 위한 전력거래소 직원의 요청에 협조하여야 한다. \n2.4.2\n통신규약"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1487,
+          "end_pos": 1492,
+          "context": "ADR\n2.4.3\n회원은 전력거래의 비밀 보호를 위해 전력거래소가 회원에게 부여한 접속\n계정또는 인증번호을 관리하는 "
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1547,
+          "end_pos": 1552,
+          "context": "관리하는 사내 접속계정관리자를 선임하고 이를 \n(\n)\n전력거래소 보안관리자에게 통지하여야 한다\n접속계정관리자 변경의 "
+        }
+      ],
+      "regulations": [
+        {
+          "text": "전력시장운영규칙",
+          "start_pos": 1094,
+          "end_pos": 1102,
+          "context": "로 보조기억 매체에 보존 \n작업을 수행한다.\n\n868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과"
+        }
+      ]
+    },
+    "regulations_referenced": [],
+    "technical_specifications": [],
+    "market_segments": [],
+    "compliance_requirements": [
+      {
+        "type": "obligation",
+        "text": "4\n회원의 접속계정관리자는 매 \n개월 단위로 회원 사내 접속자의 비밀번호\n1\n가 변경되도록 하여야 한다",
+        "context": "소 보안관리자에게 통지하여야 한다\n접속계정관리자 변경의 경\n. \n우에도 동일하다.\n2.4.4\n회원의 접속계정관리자는 매 \n개월 단위로 회원 사내 접속자의 비밀번호\n1\n가 변경되도록 하여야 한다.\n2.4.5\n수요관리사업자 회원이 전용데이터회선을 이용하여 입찰 및 사용전력량 \n데이터 ",
+        "importance": "informational"
+      }
+    ],
+    "document_classification": {
+      "primary_type": "규칙",
+      "secondary_types": [
+        "절차"
+      ],
+      "confidence_scores": {
+        "규칙": 3,
+        "고시": 0,
+        "절차": 3,
+        "양식": 0,
+        "기술기준": 0,
+        "계약": 0
+      }
+    }
+  },
+  "structural_metadata": {
+    "document_structure": {
+      "total_sections": 35,
+      "total_paragraphs": 2,
+      "total_sentences": 33,
+      "has_sections": true,
+      "section_hierarchy": {
+        "depth": 1,
+        "structure": "hierarchical",
+        "section_types": [],
+        "numbering_scheme": "unknown"
+      }
+    },
+    "multimodal_elements": {
+      "total_images": 0,
+      "total_tables": 0,
+      "total_formulas": 0,
+      "has_visual_content": false,
+      "has_structured_data": false,
+      "has_mathematical_content": false
+    },
+    "content_distribution": {
+      "section_lengths": [
+        11,
+        19,
+        3,
+        3,
+        3,
+        3,
+        17,
+        3,
+        5,
+        1,
+        15,
+        5,
+        15,
+        6,
+        2,
+        2,
+        2,
+        2,
+        11,
+        2,
+        2,
+        6,
+        5,
+        7,
+        1,
+        49,
+        9,
+        7,
+        33,
+        7,
+        5,
+        64,
+        17,
+        21,
+        36
+      ],
+      "paragraph_lengths": [
+        1088,
+        650
+      ],
+      "content_balance": "uneven"
+    }
+  },
+  "content_metadata": {
+    "language_analysis": {
+      "primary_language": "korean",
+      "text_complexity": "simple",
+      "readability_score": 10.4
+    },
+    "keyword_analysis": {
+      "top_keywords": [
+        {
+          "keyword": "수요반응자원",
+          "frequency": 10,
+          "importance": 1.0
+        },
+        {
+          "keyword": "시스템의",
+          "frequency": 6,
+          "importance": 0.6
+        },
+        {
+          "keyword": "전력거래소는",
+          "frequency": 5,
+          "importance": 0.5
+        },
+        {
+          "keyword": "데이터",
+          "frequency": 5,
+          "importance": 0.5
+        },
+        {
+          "keyword": "사용전력량",
+          "frequency": 4,
+          "importance": 0.4
+        },
+        {
+          "keyword": "시스템",
+          "frequency": 4,
+          "importance": 0.4
+        },
+        {
+          "keyword": "전력거래시스템",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "수요반응자원의",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "시스템을",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "실시간",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "전력수요",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "의무감축요청",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "전력부하감축증대량",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "거래시장을",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "위하여",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "안정적인",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "수행한다",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "사전에",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "정지계획을",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "회원에게",
+          "frequency": 2,
+          "importance": 0.2
+        }
+      ],
+      "domain_keywords": [
+        "전력거래소",
+        "전력시장운영규칙"
+      ],
+      "technical_terms": [
+        {
+          "term": "ADR",
+          "position": 1457,
+          "context": ". \n2.4.2\n통신규약 : OpenADR\n2.4.3\n회원은 전력거래의 비밀 "
+        }
+      ]
+    },
+    "content_characteristics": {
+      "document_length": 1740,
+      "word_count": 393,
+      "sentence_count": 60,
+      "average_sentence_length": 7.08,
+      "has_numbered_lists": true,
+      "has_bullet_points": true
+    }
+  },
+  "ai_enhancement": {
+    "searchability": {
+      "key_search_terms": [
+        "전력부하감축증대량",
+        "운영관리하기",
+        "개정",
+        "또는",
+        "설치하",
+        "안정적인",
+        "주기적으로",
+        "시스템이라",
+        "위한",
+        "장애",
+        "거래",
+        "요",
+        "관련",
+        "수요관리사업자는",
+        "보존",
+        "정지계획을",
+        "수요반응참여고객의",
+        "수",
+        "등",
+        "사항을",
+        "변경의",
+        "신속한",
+        "기능",
+        "시스",
+        "관리",
+        "1",
+        "정보공개",
+        "시스템은",
+        "정함으로써",
+        "협조하여야",
+        "최대한",
+        "이터의",
+        "수집",
+        "설치",
+        "준수사항",
+        "거래시장을",
+        "전력거래시스템",
+        "시험에",
+        "다",
+        "전력거래시스템과의",
+        "시스템",
+        "위하여",
+        "최소화를",
+        "한다",
+        "전력거래소는",
+        "대한",
+        "통지",
+        "복구를",
+        "전력시장운영규칙",
+        "접속을"
+      ],
+      "semantic_concepts": [
+        "통신규약"
+      ],
+      "question_answering_hints": [
+        {
+          "question": "통신규약이란 무엇인가요?",
+          "answer_hint": "OpenADR\n2",
+          "source_context": "\n통신규약 : OpenADR\n2"
+        }
+      ]
+    },
+    "summarization_support": {
+      "main_topics": [
+        "수요반응자원 전력거래시스템 운영 절차",
+        "수요반응자원 전력거래시스템 운영 절차",
+        "전력부하감축증대량 평가 및 정산 등 수",
+        "시스템이라 한다의 운영절차를 정함으로써 원활한 수요반응자원 거래",
+        "수요반응자원 전력거래시스템 운영",
+        "시스템의 설치",
+        "전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하여",
+        "수요반응자원의 운영 및 거래와 관련한 사항을 담당하는 시스템을 설치하",
+        "시스템의 기능",
+        "시스템은 공정하고 안정적인 수요반응자원 거래시장을 운영하기 위해 다"
+      ],
+      "key_points": [
+        "불가",
+        "의무",
+        "의무"
+      ],
+      "summary_candidates": [
+        "별표 \n수요반응자원 전력거래시스템 운영 절차 \n[\n27] \n∙ 867\n별표 \n신설 \n[\n27] [\n2014.11.3.] \n수요반응자원 전력거래시스템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전력수요 의무감축요청\n전력부하감축증대량 평가 및 정산 등 수\n, \n, \n(\n)\n요반응자원 운영 및 ",
+        "868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스\n템 및 부대설비의 예방정비를 주기적으로 실시한다.\n2.3.5\n전력거래소는 실시간 사용전력량 데이터의 취득 상황을 수시로 확인하고 \n미취득시 시스템의 데이터 연계 상태를 점검한 후 통신회사의 통신통제부\n서와 판매사업자 및 수요관리사업자의 협조를 통해"
+      ]
+    },
+    "context_enhancement": {
+      "prerequisite_knowledge": [
+        "사전",
+        "사전"
+      ],
+      "related_concepts": [
+        "전력거래소",
+        "전력시장운영규칙"
+      ],
+      "cross_references": [
+        {
+          "type": "regulation",
+          "reference": "목적\n규칙",
+          "context": "3.] \n수요반응자원 전력거래시스템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n"
+        },
+        {
+          "type": "regulation",
+          "reference": "전력시장운영규칙",
+          "context": "로 보조기억 매체에 보존 \n작업을 수행한다.\n\n868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "reference",
+      "source": "전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차",
+      "target": "목적\n규칙",
+      "context": "신설 \n[\n27] [\n2014.11.3.] \n수요반응자원 전력거래시스템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전력수",
+      "position": 93
+    },
+    {
+      "type": "reference",
+      "source": "전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차",
+      "target": "전력시장운영규칙",
+      "context": "속한 복구를 위해 수시 또는 주기적으로 보조기억 매체에 보존 \n작업을 수행한다.\n\n868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스\n",
+      "position": 1094
+    }
+  ],
+  "quality_indicators": {
+    "completeness_score": 1.0,
+    "structure_score": 1.0,
+    "metadata_richness": 0.7,
+    "overall_quality": 0.9,
+    "processing_success": true
+  },
+  "processing_time_ms": 15.061
+}

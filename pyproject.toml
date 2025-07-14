@@ -1,0 +1,221 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "power-market-rag"
+version = "1.0.0"
+description = "전력시장 규칙 기반 RAG 시스템"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Power Market RAG Team", email = "team@powermarket-rag.com"}
+]
+keywords = ["rag", "power-market", "nlp", "fastapi", "vector-database"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-multipart>=0.0.6",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "PyPDF2>=3.0.0",
+    "python-docx>=0.8.11",
+    "psycopg2-binary>=2.9.0",
+    "redis>=5.0.0",
+    "bcrypt>=4.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "sqlalchemy>=2.0.0",
+    "alembic>=1.12.0",
+    "pyyaml>=6.0",
+    "loguru>=0.7.0",
+    "prometheus-client>=0.19.0",
+    "psutil>=5.9.0",
+    "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.0",
+    "black>=23.9.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.6.0",
+    "pylint>=3.0.0",
+    "bandit[toml]>=1.7.0",
+    "safety>=2.3.0",
+    "pre-commit>=3.5.0",
+]
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.0",
+    "httpx>=0.25.0",
+    "factory-boy>=3.3.0",
+]
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.4.0",
+    "mkdocstrings[python]>=0.23.0",
+]
+monitoring = [
+    "grafana-api>=1.0.3",
+    "prometheus-api-client>=0.5.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/power-market-rag"
+Repository = "https://github.com/your-org/power-market-rag.git"
+Documentation = "https://power-market-rag.readthedocs.io"
+"Bug Tracker" = "https://github.com/your-org/power-market-rag/issues"
+
+[project.scripts]
+power-market-rag = "api.api_server:main"
+load-documents = "load_all_documents:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api*", "auth*", "cache*", "config*", "database*", "embeddings*", "generation*", "monitoring*", "retrieval*", "vector_db*"]
+exclude = ["tests*", "docs*"]
+
+# Black 코드 포맷터 설정
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # 제외할 디렉토리들
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | venv
+  | logs
+  | vector_db
+)/
+'''
+
+# isort import 정렬 설정
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["api", "auth", "cache", "config", "database", "embeddings", "generation", "monitoring", "retrieval", "vector_db"]
+known_third_party = ["fastapi", "pydantic", "sqlalchemy", "redis", "chromadb", "sentence_transformers"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+skip_glob = ["**/migrations/*", "venv/*", "env/*", ".venv/*"]
+
+# MyPy 타입 체킹 설정
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+show_error_codes = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "chromadb.*",
+    "sentence_transformers.*",
+    "PyPDF2.*",
+    "docx.*",
+    "redis.*",
+    "prometheus_client.*",
+    "psutil.*",
+]
+ignore_missing_imports = true
+
+# Pylint 설정
+[tool.pylint.messages_control]
+disable = [
+    "missing-docstring",
+    "invalid-name",
+    "line-too-long",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-locals",
+    "too-many-instance-attributes",
+    "import-error",
+    "no-member"
+]
+
+[tool.pylint.format]
+max-line-length = 88
+
+# Bandit 보안 검사 설정
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".venv", "env", ".env"]
+skips = ["B101", "B601"]  # assert 사용, shell=True 허용
+
+# Coverage 설정
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "venv/*",
+    ".venv/*",
+    "setup.py",
+    "*/migrations/*",
+    "*/vector_db/*",
+    "*/logs/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+ignore_errors = true
+
+[tool.coverage.html]
+directory = "htmlcov"

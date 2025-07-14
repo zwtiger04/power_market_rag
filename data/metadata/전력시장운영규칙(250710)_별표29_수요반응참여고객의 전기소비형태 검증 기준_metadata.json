@@ -1,0 +1,456 @@
+{
+  "document_id": "전력시장운영규칙(250710)_별표29_수요반응참여고객의 전기소비형태 검증 기준",
+  "extraction_timestamp": "2025-07-13T12:01:32.373580",
+  "power_market_metadata": {
+    "market_entities": {
+      "participants": [
+        {
+          "text": "전력거래소",
+          "start_pos": 995,
+          "end_pos": 1000,
+          "context": "\n20\n90\n의 \n시부터 \n시까지 사용전력량 데이터를 전력거래소에 제공하여야 한\n9\n20\n다\n개정 \n. <\n2016."
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1530,
+          "end_pos": 1535,
+          "context": "<\n2019.12.31., 2024.8.1.>\n3.6\n전력거래소는 고객기준부하 산정을 위한 옵션은 적용하지 아니한다."
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1686,
+          "end_pos": 1691,
+          "context": "”\n. [\n2019.12.13.]\n4.0\n절차\n4.1\n전력거래소는 신규 등록 및 수요관리사업자를 변경하고자 하는 수요"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1756,
+          "end_pos": 1761,
+          "context": "고객에 대해서 전기소비형태를 검증하여야 한다.\n4.2\n전력거래소는 수요반응 참여고객별로 마지막 검증년도부터 매 \n년 "
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1895,
+          "end_pos": 1900,
+          "context": "등록 신청 시 수요반응참여고객별 사\n용전력량 데이터를 전력거래소가 정한 서식 형식에 따라 파일을 작성하여 \n수요반응 "
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 1985,
+          "end_pos": 1990,
+          "context": "다\n번호변경 \n. \n<\n2016.12.30.>\n4.4\n전력거래소는 수요관리사업자가 제출한 파일을 활용하여 전기소비형태"
+        },
+        {
+          "text": "전력거래소",
+          "start_pos": 2098,
+          "end_pos": 2103,
+          "context": ".12.30.>\n5.0\n전기소비형태 검증 기준\n5.1\n전력거래소는 전기소비형태 검증 결과가 \n이하인 전기소비자를 수요"
+        }
+      ],
+      "regulations": [
+        {
+          "text": "전력시장운영규칙",
+          "start_pos": 4,
+          "end_pos": 12,
+          "context": "874\n전력시장운영규칙\n ∙ \n별표 \n[\n29]\n신설 \n [\n2014.11."
+        }
+      ],
+      "time_periods": [
+        {
+          "text": "09:00",
+          "start_pos": 867,
+          "end_pos": 872,
+          "context": "2\n검증대상 시간대는 시부터 \n시까지\n이다\n9\n20\n(09:00\n20:00)\n.\n∼\n3.3\n수요관리사업자는 등록하고자"
+        },
+        {
+          "text": "20:00",
+          "start_pos": 873,
+          "end_pos": 878,
+          "context": " 시간대는 시부터 \n시까지\n이다\n9\n20\n(09:00\n20:00)\n.\n∼\n3.3\n수요관리사업자는 등록하고자 하는 수요"
+        },
+        {
+          "text": "시간대",
+          "start_pos": 453,
+          "end_pos": 456,
+          "context": "일 \nD : \n검증대상일 개수\nD(n) : \n검증대상 시간대\nT : \n검증대상 시간대 개수\nT(n) : \nCBLd"
+        },
+        {
+          "text": "시간대",
+          "start_pos": 467,
+          "end_pos": 470,
+          "context": "개수\nD(n) : \n검증대상 시간대\nT : \n검증대상 시간대 개수\nT(n) : \nCBLd,t\n일 시의 고객기준부하"
+        },
+        {
+          "text": "시간대",
+          "start_pos": 844,
+          "end_pos": 847,
+          "context": " 적용할 수 있다\n10\n31\n45\n.\n3.2\n검증대상 시간대는 시부터 \n시까지\n이다\n9\n20\n(09:00\n20:0"
+        }
+      ]
+    },
+    "regulations_referenced": [],
+    "technical_specifications": [],
+    "market_segments": [],
+    "compliance_requirements": [],
+    "document_classification": {
+      "primary_type": "규칙",
+      "secondary_types": [
+        "절차",
+        "양식"
+      ],
+      "confidence_scores": {
+        "규칙": 10,
+        "고시": 0,
+        "절차": 1,
+        "양식": 1,
+        "기술기준": 0,
+        "계약": 0
+      }
+    }
+  },
+  "structural_metadata": {
+    "document_structure": {
+      "total_sections": 44,
+      "total_paragraphs": 2,
+      "total_sentences": 40,
+      "has_sections": true,
+      "section_hierarchy": {
+        "depth": 1,
+        "structure": "hierarchical",
+        "section_types": [],
+        "numbering_scheme": "unknown"
+      }
+    },
+    "multimodal_elements": {
+      "total_images": 0,
+      "total_tables": 0,
+      "total_formulas": 0,
+      "has_visual_content": false,
+      "has_structured_data": false,
+      "has_mathematical_content": false
+    },
+    "content_distribution": {
+      "section_lengths": [
+        1,
+        5,
+        13,
+        3,
+        41,
+        3,
+        41,
+        3,
+        70,
+        3,
+        6,
+        3,
+        13,
+        3,
+        7,
+        3,
+        3,
+        1,
+        1,
+        1,
+        33,
+        3,
+        5,
+        21,
+        1,
+        44,
+        11,
+        5,
+        3,
+        3,
+        3,
+        1,
+        16,
+        65,
+        18,
+        24,
+        3,
+        31,
+        20,
+        20,
+        20,
+        3,
+        22,
+        16
+      ],
+      "paragraph_lengths": [
+        1103,
+        1113
+      ],
+      "content_balance": "uneven"
+    }
+  },
+  "content_metadata": {
+    "language_analysis": {
+      "primary_language": "korean",
+      "text_complexity": "simple",
+      "readability_score": 15.87
+    },
+    "keyword_analysis": {
+      "top_keywords": [
+        {
+          "keyword": "전기소비형태",
+          "frequency": 5,
+          "importance": 0.5
+        },
+        {
+          "keyword": "전기소비형태를",
+          "frequency": 5,
+          "importance": 0.5
+        },
+        {
+          "keyword": "전력거래소는",
+          "frequency": 5,
+          "importance": 0.5
+        },
+        {
+          "keyword": "수요반응참여고객의",
+          "frequency": 4,
+          "importance": 0.4
+        },
+        {
+          "keyword": "검증대상일",
+          "frequency": 4,
+          "importance": 0.4
+        },
+        {
+          "keyword": "검증대상",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "검증대상일의",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "수요관리사업자는",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "번호변경",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "수요반응",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "파일을",
+          "frequency": 3,
+          "importance": 0.3
+        },
+        {
+          "keyword": "검증기간의",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "rrmse",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "사용전력량",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "시간대",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "고객기준부하",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "검증종료일은",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "검증시작일의",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "영업일",
+          "frequency": 2,
+          "importance": 0.2
+        },
+        {
+          "keyword": "전이다",
+          "frequency": 2,
+          "importance": 0.2
+        }
+      ],
+      "domain_keywords": [
+        "20:00",
+        "09:00",
+        "전력시장운영규칙",
+        "시간대",
+        "전력거래소"
+      ],
+      "technical_terms": [
+        {
+          "term": "RRMSE",
+          "position": 221,
+          "context": "정의\n2.1\n검증기간의 시간별 고객\nRRMSE(Relative Root Mean "
+        },
+        {
+          "term": "RRMSE",
+          "position": 341,
+          "context": "를 검증하는 통계방식임\n3.0\n산식\nRRMSE \n\n×\n\n∈"
+        },
+        {
+          "term": "CBL",
+          "position": 482,
+          "context": "검증대상 시간대 개수\nT(n) : \nCBLd,t\n일 시의 고객기준부하\n : d"
+        }
+      ]
+    },
+    "content_characteristics": {
+      "document_length": 2218,
+      "word_count": 456,
+      "sentence_count": 84,
+      "average_sentence_length": 6.06,
+      "has_numbered_lists": true,
+      "has_bullet_points": false
+    }
+  },
+  "ai_enhancement": {
+    "searchability": {
+      "key_search_terms": [
+        "RRMSE",
+        "09:00",
+        "시간별",
+        "고객기준부하",
+        "(",
+        "정의",
+        "시의",
+        "5",
+        "실효성을",
+        "개정",
+        "등록",
+        "수요반응",
+        "전기소비형태",
+        "20:00",
+        "일",
+        "이하인",
+        "검증종료일은",
+        "검증",
+        "전력부하감축에",
+        "개수",
+        "기준",
+        "시간대",
+        "최대검증대상일",
+        "수요관리사업자를",
+        "전력거래소",
+        "수요",
+        "검증대상일",
+        "전기소비자의",
+        "검증대상",
+        "비율로",
+        "년",
+        "전력거래기간에",
+        "전기소비형태가",
+        "전기소비형태를",
+        "초기",
+        "검증하기",
+        "45",
+        "수요반응참여고객",
+        ")",
+        "번호변경",
+        "및",
+        "별표",
+        "변경하고자",
+        "전기소비자를",
+        "신설",
+        "소비전력량",
+        "수요반응참여고객의",
+        "위하여",
+        "절차",
+        "고객"
+      ],
+      "semantic_concepts": [
+        "고객기준부하",
+        "용어의"
+      ],
+      "question_answering_hints": [
+        {
+          "question": "이란 무엇인가요?",
+          "answer_hint": "기준부하와 실제 사용전력량의 평균 오차와 검증기간의 평균 사용전력량\n의 비율로 전기소비자의 전기소비형태를 검증하는 통계방식임\n3",
+          "source_context": " : \n기준부하와 실제 사용전력량의 평균 오차와 검증기간의 평균 사용전력량\n의 비율로 전기소비자의 전기소비형태를 검증하는 통계방식임\n3"
+        },
+        {
+          "question": "검증대상일 \nD이란 무엇인가요?",
+          "answer_hint": "검증대상일 개수\nD(n) : \n검증대상 시간대\nT : \n검증대상 시간대 개수\nT(n) : \nCBLd,t\n일 시의 고객기준부하\n : d\nt\nLoadd,t \n일 시의 소비전력량\n: d\nt\n3",
+          "source_context": "\n검증대상일 \nD : \n검증대상일 개수\nD(n) : \n검증대상 시간대\nT : \n검증대상 시간대 개수\nT(n) : \nCBLd,t\n일 시의 고객기준부하\n : d\nt\nLoadd,t \n일 시의 소비전력량\n: d\nt\n3"
+        }
+      ]
+    },
+    "summarization_support": {
+      "main_topics": [
+        "전력시장운영규칙",
+        "수요반응참여고객의 전기소비형태 검증 기준",
+        "의 전력부하감축에 대한 실효성을 검증하기 위하여 전기소비형태가 해당",
+        "용어의 정의",
+        "검증기간의 시간별 고객",
+        "의 비율로 전기소비자의 전기소비형태를 검증하는 통계방식임",
+        "RRMSE",
+        "검증대상일",
+        "검증대상일 개수",
+        "검증대상 시간대"
+      ],
+      "key_points": [
+        "의무"
+      ],
+      "summary_candidates": [
+        "874\n전력시장운영규칙\n ∙ \n별표 \n[\n29]\n신설 \n [\n2014.11.3.] \n수요반응참여고객의 전기소비형태 검증 기준\n1.0\n목적\n수요반응자원의 전력부하감축거래량 평가의 정확성 제고 및 수요반응자원\n의 전력부하감축에 대한 실효성을 검증하기 위하여 전기소비형태가 해당 \n기준에 적합한 전기소비자만을 수요반응참여고객으로 등록하기 위함이다. \n2.0\n용어의",
+        "별표 \n수요반응참여고객의 전기소비형태 검증 기준 \n[\n29] \n∙ 875\n상시 전기소비형태와 다른 날을 최대 일까지 선택하여 제외할 수 있다\n5\n.\n3.5\n검증대상일에 실시간 전력수요 의무감축요청감축시험\n감축재시험\n감축\n(\n, \n, \n신뢰성시험 포함에 따른 감축일자발적 수요감축에 따른 감축일자발적 \n)\n, \n, \n수요증대에 따른 증대일이 포함될 경우 해당일"
+      ]
+    },
+    "context_enhancement": {
+      "prerequisite_knowledge": [],
+      "related_concepts": [
+        "20:00",
+        "09:00",
+        "전력시장운영규칙",
+        "시간대",
+        "전력거래소"
+      ],
+      "cross_references": [
+        {
+          "type": "regulation",
+          "reference": "전력시장운영규칙",
+          "context": "874\n전력시장운영규칙\n ∙ \n별표 \n[\n29]\n신설 \n [\n2014.11."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "reference",
+      "source": "전력시장운영규칙(250710)_별표29_수요반응참여고객의 전기소비형태 검증 기준",
+      "target": "전력시장운영규칙",
+      "context": "874\n전력시장운영규칙\n ∙ \n별표 \n[\n29]\n신설 \n [\n2014.11.3.] \n수요반응참여고객의 전기소비형",
+      "position": 4
+    }
+  ],
+  "quality_indicators": {
+    "completeness_score": 1.0,
+    "structure_score": 1.0,
+    "metadata_richness": 0.7,
+    "overall_quality": 0.9,
+    "processing_success": true
+  },
+  "processing_time_ms": 19.918000000000003
+}

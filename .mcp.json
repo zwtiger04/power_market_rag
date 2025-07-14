@@ -1,0 +1,37 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "/home/zwtiger/.mcp-scripts/github-wrapper.sh",
+      "args": []
+    },
+    "desktop-commander": {
+      "command": "npx",
+      "args": ["@wonderwhy-er/desktop-commander@latest"]
+    },
+    "notion": {
+      "command": "/home/zwtiger/.mcp-scripts/notion-wrapper.sh",
+      "args": []
+    },
+    "figma": {
+      "command": "/home/zwtiger/.mcp-scripts/figma-wrapper.sh",
+      "args": []
+    },
+    "zapier": {
+      "command": "/home/zwtiger/.mcp-scripts/zapier-wrapper.sh",
+      "args": []
+    },
+    "memory": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/zwtiger/mcp-memory-service",
+        "run",
+        "memory"
+      ],
+      "env": {
+        "MCP_MEMORY_CHROMA_PATH": "/home/zwtiger/.local/share/mcp-memory/chroma_db",
+        "MCP_MEMORY_BACKUPS_PATH": "/home/zwtiger/.local/share/mcp-memory/backups"
+      }
+    }
+  }
+}

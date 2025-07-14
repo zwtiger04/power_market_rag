@@ -1,0 +1,552 @@
+{
+  "document_id": "전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차",
+  "file_path": "data/documents/전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차.pdf",
+  "file_name": "전력시장운영규칙(250710)_별표27_수요반응자원 전력거래시스템 운영 절차.pdf",
+  "processed_at": "2025-07-13T12:01:30.633932",
+  "content": {
+    "document": "별표 \n수요반응자원 전력거래시스템 운영 절차 \n[\n27] \n∙ 867\n별표 \n신설 \n[\n27] [\n2014.11.3.] \n수요반응자원 전력거래시스템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전력수요 의무감축요청\n전력부하감축증대량 평가 및 정산 등 수\n, \n, \n(\n)\n요반응자원 운영 및 전력거래를 위한 수요반응자원 전력거래시스템이하 \n(\n시스템이라 한다의 운영절차를 정함으로써 원활한 수요반응자원 거래\n“\n”\n)\n시장 운영을 도모하는데 그 목적이 있다\n개정 \n. <\n2021.1.1>\n2.0\n수요반응자원 전력거래시스템 운영\n2.1\n시스템의 설치\n2.1.1\n전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하여 \n·\n수요반응자원의 운영 및 거래와 관련한 사항을 담당하는 시스템을 설치하\n고 운영하여야 한다. \n2.2\n시스템의 기능\n2.2.1\n시스템은 공정하고 안정적인 수요반응자원 거래시장을 운영하기 위해 다\n음 각호의 기능을 수행한다.\n수요관리사업자수요반응자원 및 수요반응참여고객의 등록관리 \n1. \n, \n, \n수요반응자원의 입찰 \n2. \n수요반응자원의 등록시험과 감축시험의 시행 및 조치\n3. \n수요반응자원에 대한 실시간 전력수요 의무감축요청\n4. \n전력부하감축증대량 평가 및 정산 개정 \n5. \n(\n)\n<\n2021.1.1>\n수요반응자원 거래시장 관련 정보공개 \n6. \n실시간 사용전력량 데이터 취득을 위한 연계 및 데이터 관리\n7. \n정산용 사용전력량 데이터 수집 및 관리\n8. \n2.3\n시스템의 운영\n2.3.1\n시스템의 가동시간은 일 \n시간 연속 가동을 원칙으로 한다\n1\n24\n.\n2.3.2\n전력거래소는 시스템의 운영상 중대한 장애 발생 또는 업무상 시스템 중\n지가 불가피한 경우 사전에 시스템 정지계획을 수립하여\n회원에게 통지\n, \n하고 시스템을 일시정지 시킬 수 있다\n단\n사안이 긴급하여 정지계획을 \n. \n, \n수립할 수 없는 경우에는 사전에 통지 없이 시스템을 정지시킬 수 있다.\n2.3.3\n전력거래소는 예기치 못한 사고로부터 시스템 정보의 보존 및 손상된 데\n이터의 신속한 복구를 위해 수시 또는 주기적으로 보조기억 매체에 보존 \n작업을 수행한다.\n\n868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스\n템 및 부대설비의 예방정비를 주기적으로 실시한다.\n2.3.5\n전력거래소는 실시간 사용전력량 데이터의 취득 상황을 수시로 확인하고 \n미취득시 시스템의 데이터 연계 상태를 점검한 후 통신회사의 통신통제부\n서와 판매사업자 및 수요관리사업자의 협조를 통해 시험을 실시하여야 하\n며판매사업자 및 수요관리사업자은 시험에 최대한 협조하여야 한다\n, \n.\n2.4\n회원의 준수사항 \n2.4.1\n수요관리사업자는 수요반응자원 전력거래시스템과의 접속을 위한 제반 요\n구사항의 준수 등을 위한 전력거래소 직원의 요청에 협조하여야 한다. \n2.4.2\n통신규약 : OpenADR\n2.4.3\n회원은 전력거래의 비밀 보호를 위해 전력거래소가 회원에게 부여한 접속\n계정또는 인증번호을 관리하는 사내 접속계정관리자를 선임하고 이를 \n(\n)\n전력거래소 보안관리자에게 통지하여야 한다\n접속계정관리자 변경의 경\n. \n우에도 동일하다.\n2.4.4\n회원의 접속계정관리자는 매 \n개월 단위로 회원 사내 접속자의 비밀번호\n1\n가 변경되도록 하여야 한다.\n2.4.5\n수요관리사업자 회원이 전용데이터회선을 이용하여 입찰 및 사용전력량 \n데이터 연계 시 발생하는 데이터통신요금은 회원이 지불하여야 한다.",
+    "sections": [
+      {
+        "title": "수요반응자원 전력거래시스템 운영 절차",
+        "section_index": 0,
+        "line_number": 1,
+        "content": "[\n27]\n∙ 867",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "신설",
+        "section_index": 1,
+        "line_number": 6,
+        "content": "[\n27] [\n2014.11.3.]",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "수요반응자원 전력거래시스템 운영 절차",
+        "section_index": 2,
+        "line_number": 10,
+        "content": "1.0",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "12",
+        "section_index": 3,
+        "line_number": 16,
+        "content": ",\n,",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "전력부하감축증대량 평가 및 정산 등 수",
+        "section_index": 4,
+        "line_number": 21,
+        "content": ",\n,",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "시스템이라 한다의 운영절차를 정함으로써 원활한 수요반응자원 거래",
+        "section_index": 5,
+        "line_number": 28,
+        "content": "“\n”",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "개정",
+        "section_index": 6,
+        "line_number": 33,
+        "content": ". <\n2021.1.1>\n2.0",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "수요반응자원 전력거래시스템 운영",
+        "section_index": 7,
+        "line_number": 37,
+        "content": "2.1",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "시스템의 설치",
+        "section_index": 8,
+        "line_number": 39,
+        "content": "2.1.1",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하여",
+        "section_index": 9,
+        "line_number": 41,
+        "content": "·",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "수요반응자원의 운영 및 거래와 관련한 사항을 담당하는 시스템을 설치하",
+        "section_index": 10,
+        "line_number": 43,
+        "content": "고 운영하여야 한다.\n2.2",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "시스템의 기능",
+        "section_index": 11,
+        "line_number": 46,
+        "content": "2.2.1",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "시스템은 공정하고 안정적인 수요반응자원 거래시장을 운영하기 위해 다",
+        "section_index": 12,
+        "line_number": 48,
+        "content": "음 각호의 기능을 수행한다.",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "수요관리사업자수요반응자원 및 수요반응참여고객의 등록관리",
+        "section_index": 13,
+        "line_number": 50,
+        "content": "1.\n,\n,",
+        "subsections": [],
+        "word_count": 3
+      },
+      {
+        "title": "수요반응자원의 입찰",
+        "section_index": 14,
+        "line_number": 54,
+        "content": "2.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "수요반응자원의 등록시험과 감축시험의 시행 및 조치",
+        "section_index": 15,
+        "line_number": 56,
+        "content": "3.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "수요반응자원에 대한 실시간 전력수요 의무감축요청",
+        "section_index": 16,
+        "line_number": 58,
+        "content": "4.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "전력부하감축증대량 평가 및 정산 개정",
+        "section_index": 17,
+        "line_number": 60,
+        "content": "5.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": ")",
+        "section_index": 18,
+        "line_number": 63,
+        "content": "<\n2021.1.1>",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "수요반응자원 거래시장 관련 정보공개",
+        "section_index": 19,
+        "line_number": 66,
+        "content": "6.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "실시간 사용전력량 데이터 취득을 위한 연계 및 데이터 관리",
+        "section_index": 20,
+        "line_number": 68,
+        "content": "7.",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "정산용 사용전력량 데이터 수집 및 관리",
+        "section_index": 21,
+        "line_number": 70,
+        "content": "8.\n2.3",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "시스템의 운영",
+        "section_index": 22,
+        "line_number": 73,
+        "content": "2.3.1",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "24",
+        "section_index": 23,
+        "line_number": 78,
+        "content": ".\n2.3.2",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "회원에게 통지",
+        "section_index": 24,
+        "line_number": 83,
+        "content": ",",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "사안이 긴급하여 정지계획을",
+        "section_index": 25,
+        "line_number": 87,
+        "content": ".\n,\n수립할 수 없는 경우에는 사전에 통지 없이 시스템을 정지시킬 수 있다.\n2.3.3",
+        "subsections": [],
+        "word_count": 14
+      },
+      {
+        "title": "이터의 신속한 복구를 위해 수시 또는 주기적으로 보조기억 매체에 보존",
+        "section_index": 26,
+        "line_number": 93,
+        "content": "작업을 수행한다.",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "전력시장운영규칙",
+        "section_index": 27,
+        "line_number": 97,
+        "content": "∙\n2.3.4",
+        "subsections": [],
+        "word_count": 2
+      },
+      {
+        "title": "전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스",
+        "section_index": 28,
+        "line_number": 100,
+        "content": "템 및 부대설비의 예방정비를 주기적으로 실시한다.\n2.3.5",
+        "subsections": [],
+        "word_count": 7
+      },
+      {
+        "title": "며판매사업자 및 수요관리사업자은 시험에 최대한 협조하여야 한다",
+        "section_index": 29,
+        "line_number": 106,
+        "content": ",\n.\n2.4",
+        "subsections": [],
+        "word_count": 3
+      },
+      {
+        "title": "회원의 준수사항",
+        "section_index": 30,
+        "line_number": 110,
+        "content": "2.4.1",
+        "subsections": [],
+        "word_count": 1
+      },
+      {
+        "title": "수요관리사업자는 수요반응자원 전력거래시스템과의 접속을 위한 제반 요",
+        "section_index": 31,
+        "line_number": 112,
+        "content": "구사항의 준수 등을 위한 전력거래소 직원의 요청에 협조하여야 한다.\n2.4.2\n통신규약 : OpenADR\n2.4.3",
+        "subsections": [],
+        "word_count": 14
+      },
+      {
+        "title": "접속계정관리자 변경의 경",
+        "section_index": 32,
+        "line_number": 122,
+        "content": ".\n우에도 동일하다.\n2.4.4",
+        "subsections": [],
+        "word_count": 4
+      },
+      {
+        "title": "1",
+        "section_index": 33,
+        "line_number": 128,
+        "content": "가 변경되도록 하여야 한다.\n2.4.5",
+        "subsections": [],
+        "word_count": 5
+      },
+      {
+        "title": "수요관리사업자 회원이 전용데이터회선을 이용하여 입찰 및 사용전력량",
+        "section_index": 34,
+        "line_number": 131,
+        "content": "데이터 연계 시 발생하는 데이터통신요금은 회원이 지불하여야 한다.",
+        "subsections": [],
+        "word_count": 8
+      }
+    ],
+    "paragraphs": [
+      {
+        "content": "별표 \n수요반응자원 전력거래시스템 운영 절차 \n[\n27] \n∙ 867\n별표 \n신설 \n[\n27] [\n2014.11.3.] \n수요반응자원 전력거래시스템 운영 절차\n1.0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전력수요 의무감축요청\n전력부하감축증대량 평가 및 정산 등 수\n, \n, \n(\n)\n요반응자원 운영 및 전력거래를 위한 수요반응자원 전력거래시스템이하 \n(\n시스템이라 한다의 운영절차를 정함으로써 원활한 수요반응자원 거래\n“\n”\n)\n시장 운영을 도모하는데 그 목적이 있다\n개정 \n. <\n2021.1.1>\n2.0\n수요반응자원 전력거래시스템 운영\n2.1\n시스템의 설치\n2.1.1\n전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하여 \n·\n수요반응자원의 운영 및 거래와 관련한 사항을 담당하는 시스템을 설치하\n고 운영하여야 한다. \n2.2\n시스템의 기능\n2.2.1\n시스템은 공정하고 안정적인 수요반응자원 거래시장을 운영하기 위해 다\n음 각호의 기능을 수행한다.\n수요관리사업자수요반응자원 및 수요반응참여고객의 등록관리 \n1. \n, \n, \n수요반응자원의 입찰 \n2. \n수요반응자원의 등록시험과 감축시험의 시행 및 조치\n3. \n수요반응자원에 대한 실시간 전력수요 의무감축요청\n4. \n전력부하감축증대량 평가 및 정산 개정 \n5. \n(\n)\n<\n2021.1.1>\n수요반응자원 거래시장 관련 정보공개 \n6. \n실시간 사용전력량 데이터 취득을 위한 연계 및 데이터 관리\n7. \n정산용 사용전력량 데이터 수집 및 관리\n8. \n2.3\n시스템의 운영\n2.3.1\n시스템의 가동시간은 일 \n시간 연속 가동을 원칙으로 한다\n1\n24\n.\n2.3.2\n전력거래소는 시스템의 운영상 중대한 장애 발생 또는 업무상 시스템 중\n지가 불가피한 경우 사전에 시스템 정지계획을 수립하여\n회원에게 통지\n, \n하고 시스템을 일시정지 시킬 수 있다\n단\n사안이 긴급하여 정지계획을 \n. \n, \n수립할 수 없는 경우에는 사전에 통지 없이 시스템을 정지시킬 수 있다.\n2.3.3\n전력거래소는 예기치 못한 사고로부터 시스템 정보의 보존 및 손상된 데\n이터의 신속한 복구를 위해 수시 또는 주기적으로 보조기억 매체에 보존 \n작업을 수행한다.",
+        "paragraph_index": 0,
+        "page_number": 0,
+        "word_count": 254,
+        "char_count": 1088,
+        "sentences_count": 38
+      },
+      {
+        "content": "868\n전력시장운영규칙\n ∙ \n2.3.4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스\n템 및 부대설비의 예방정비를 주기적으로 실시한다.\n2.3.5\n전력거래소는 실시간 사용전력량 데이터의 취득 상황을 수시로 확인하고 \n미취득시 시스템의 데이터 연계 상태를 점검한 후 통신회사의 통신통제부\n서와 판매사업자 및 수요관리사업자의 협조를 통해 시험을 실시하여야 하\n며판매사업자 및 수요관리사업자은 시험에 최대한 협조하여야 한다\n, \n.\n2.4\n회원의 준수사항 \n2.4.1\n수요관리사업자는 수요반응자원 전력거래시스템과의 접속을 위한 제반 요\n구사항의 준수 등을 위한 전력거래소 직원의 요청에 협조하여야 한다. \n2.4.2\n통신규약 : OpenADR\n2.4.3\n회원은 전력거래의 비밀 보호를 위해 전력거래소가 회원에게 부여한 접속\n계정또는 인증번호을 관리하는 사내 접속계정관리자를 선임하고 이를 \n(\n)\n전력거래소 보안관리자에게 통지하여야 한다\n접속계정관리자 변경의 경\n. \n우에도 동일하다.\n2.4.4\n회원의 접속계정관리자는 매 \n개월 단위로 회원 사내 접속자의 비밀번호\n1\n가 변경되도록 하여야 한다.\n2.4.5\n수요관리사업자 회원이 전용데이터회선을 이용하여 입찰 및 사용전력량 \n데이터 연계 시 발생하는 데이터통신요금은 회원이 지불하여야 한다.",
+        "paragraph_index": 0,
+        "page_number": 1,
+        "word_count": 139,
+        "char_count": 650,
+        "sentences_count": 23
+      }
+    ],
+    "sentences": [
+      {
+        "content": "별표 \n수요반응자원 전력거래시스템 운영 절차 \n[\n27] \n∙ 867\n별표 \n신설 \n[\n27] [\n2014",
+        "sentence_index": 0,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 59
+      },
+      {
+        "content": "] \n수요반응자원 전력거래시스템 운영 절차\n1",
+        "sentence_index": 1,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 25
+      },
+      {
+        "content": "0\n목적\n규칙 제\n장의 규정에 의거 전력거래소의 수요반응자원 등록\n등록시험\n12\n, \n, \n입찰\n전력수요 의무감축요청\n전력부하감축증대량 평가 및 정산 등 수\n, \n, \n(\n)\n요반응자원 운영 및 전력거래를 위한 수요반응자원 전력거래시스템이하 \n(\n시스템이라 한다의 운영절차를 정함으로써 원활한 수요반응자원 거래\n“\n”\n)\n시장 운영을 도모하는데 그 목적이 있다\n개정",
+        "sentence_index": 2,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 204
+      },
+      {
+        "content": "<\n2021",
+        "sentence_index": 3,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 6
+      },
+      {
+        "content": "0\n수요반응자원 전력거래시스템 운영\n2",
+        "sentence_index": 4,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 21
+      },
+      {
+        "content": "1\n시스템의 설치\n2",
+        "sentence_index": 5,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 11
+      },
+      {
+        "content": "1\n전력거래소는 수요반응자원 거래시장을 효율적으로 운영관리하기 위하여 \n·\n수요반응자원의 운영 및 거래와 관련한 사항을 담당하는 시스템을 설치하\n고 운영하여야 한다",
+        "sentence_index": 6,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 91
+      },
+      {
+        "content": "2\n시스템의 기능\n2",
+        "sentence_index": 7,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 11
+      },
+      {
+        "content": "1\n시스템은 공정하고 안정적인 수요반응자원 거래시장을 운영하기 위해 다\n음 각호의 기능을 수행한다",
+        "sentence_index": 8,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 54
+      },
+      {
+        "content": "수요관리사업자수요반응자원 및 수요반응참여고객의 등록관리 \n1",
+        "sentence_index": 9,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 33
+      },
+      {
+        "content": ", \n, \n수요반응자원의 입찰 \n2",
+        "sentence_index": 10,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 19
+      },
+      {
+        "content": "수요반응자원의 등록시험과 감축시험의 시행 및 조치\n3",
+        "sentence_index": 11,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 29
+      },
+      {
+        "content": "수요반응자원에 대한 실시간 전력수요 의무감축요청\n4",
+        "sentence_index": 12,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 28
+      },
+      {
+        "content": "전력부하감축증대량 평가 및 정산 개정 \n5",
+        "sentence_index": 13,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 23
+      },
+      {
+        "content": "(\n)\n<\n2021",
+        "sentence_index": 14,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 10
+      },
+      {
+        "content": "1>\n수요반응자원 거래시장 관련 정보공개 \n6",
+        "sentence_index": 15,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 25
+      },
+      {
+        "content": "실시간 사용전력량 데이터 취득을 위한 연계 및 데이터 관리\n7",
+        "sentence_index": 16,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 34
+      },
+      {
+        "content": "정산용 사용전력량 데이터 수집 및 관리\n8",
+        "sentence_index": 17,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 23
+      },
+      {
+        "content": "3\n시스템의 운영\n2",
+        "sentence_index": 18,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 11
+      },
+      {
+        "content": "1\n시스템의 가동시간은 일 \n시간 연속 가동을 원칙으로 한다\n1\n24",
+        "sentence_index": 19,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 38
+      },
+      {
+        "content": "2\n전력거래소는 시스템의 운영상 중대한 장애 발생 또는 업무상 시스템 중\n지가 불가피한 경우 사전에 시스템 정지계획을 수립하여\n회원에게 통지\n, \n하고 시스템을 일시정지 시킬 수 있다\n단\n사안이 긴급하여 정지계획을",
+        "sentence_index": 20,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 119
+      },
+      {
+        "content": ", \n수립할 수 없는 경우에는 사전에 통지 없이 시스템을 정지시킬 수 있다",
+        "sentence_index": 21,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 41
+      },
+      {
+        "content": "3\n전력거래소는 예기치 못한 사고로부터 시스템 정보의 보존 및 손상된 데\n이터의 신속한 복구를 위해 수시 또는 주기적으로 보조기억 매체에 보존 \n작업을 수행한다",
+        "sentence_index": 22,
+        "paragraph_id": "para_0",
+        "page_number": 0,
+        "char_count": 89
+      },
+      {
+        "content": "868\n전력시장운영규칙\n ∙ \n2",
+        "sentence_index": 23,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 18
+      },
+      {
+        "content": "4\n전력거래소는 안정적인 시스템 운영과 장애 발생의 최소화를 위하여 시스\n템 및 부대설비의 예방정비를 주기적으로 실시한다",
+        "sentence_index": 24,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 67
+      },
+      {
+        "content": "5\n전력거래소는 실시간 사용전력량 데이터의 취득 상황을 수시로 확인하고 \n미취득시 시스템의 데이터 연계 상태를 점검한 후 통신회사의 통신통제부\n서와 판매사업자 및 수요관리사업자의 협조를 통해 시험을 실시하여야 하\n며판매사업자 및 수요관리사업자은 시험에 최대한 협조하여야 한다\n,",
+        "sentence_index": 25,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 155
+      },
+      {
+        "content": "4\n회원의 준수사항 \n2",
+        "sentence_index": 26,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 13
+      },
+      {
+        "content": "1\n수요관리사업자는 수요반응자원 전력거래시스템과의 접속을 위한 제반 요\n구사항의 준수 등을 위한 전력거래소 직원의 요청에 협조하여야 한다",
+        "sentence_index": 27,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 76
+      },
+      {
+        "content": "2\n통신규약 : OpenADR\n2",
+        "sentence_index": 28,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 18
+      },
+      {
+        "content": "3\n회원은 전력거래의 비밀 보호를 위해 전력거래소가 회원에게 부여한 접속\n계정또는 인증번호을 관리하는 사내 접속계정관리자를 선임하고 이를 \n(\n)\n전력거래소 보안관리자에게 통지하여야 한다\n접속계정관리자 변경의 경",
+        "sentence_index": 29,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 118
+      },
+      {
+        "content": "우에도 동일하다",
+        "sentence_index": 30,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 8
+      },
+      {
+        "content": "4\n회원의 접속계정관리자는 매 \n개월 단위로 회원 사내 접속자의 비밀번호\n1\n가 변경되도록 하여야 한다",
+        "sentence_index": 31,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 57
+      },
+      {
+        "content": "5\n수요관리사업자 회원이 전용데이터회선을 이용하여 입찰 및 사용전력량 \n데이터 연계 시 발생하는 데이터통신요금은 회원이 지불하여야 한다",
+        "sentence_index": 32,
+        "paragraph_id": "para_0",
+        "page_number": 1,
+        "char_count": 75
+      }
+    ]
+  },
+  "multimodal_content": {
+    "images": [],
+    "tables": [],
+    "formulas": []
+  },
+  "metadata": {
+    "total_pages": 2,
+    "processing_time_ms": 68.092,
+    "structure": {}
+  }
+}

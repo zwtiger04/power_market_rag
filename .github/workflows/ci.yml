@@ -1,0 +1,356 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  release:
+    types: [ published ]
+
+env:
+  PYTHON_VERSION: '3.9'
+  NODE_VERSION: '18'
+
+jobs:
+  # 코드 품질 검사
+  code-quality:
+    runs-on: ubuntu-latest
+    name: 코드 품질 검사
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: 의존성 캐시
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8 black isort mypy pylint bandit safety
+        
+    - name: 코드 포맷 검사 (Black)
+      run: black --check --diff .
+      
+    - name: Import 정렬 검사 (isort)
+      run: isort --check-only --diff .
+      
+    - name: 린트 검사 (flake8)
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      
+    - name: 타입 힌트 검사 (mypy)
+      run: mypy --ignore-missing-imports .
+      continue-on-error: true
+      
+    - name: 코드 품질 검사 (pylint)
+      run: pylint **/*.py --exit-zero
+      continue-on-error: true
+      
+    - name: 보안 취약점 검사 (bandit)
+      run: bandit -r . -f json -o bandit-report.json
+      continue-on-error: true
+      
+    - name: 의존성 보안 검사 (safety)
+      run: safety check --json --output safety-report.json
+      continue-on-error: true
+      
+    - name: 보고서 업로드
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: code-quality-reports
+        path: |
+          bandit-report.json
+          safety-report.json
+
+  # 단위 테스트
+  unit-tests:
+    runs-on: ubuntu-latest
+    name: 단위 테스트
+    needs: code-quality
+    
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Python ${{ matrix.python-version }} 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov pytest-asyncio pytest-mock
+        
+    - name: 단위 테스트 실행
+      run: |
+        pytest tests/ -v --cov=. --cov-report=xml --cov-report=html
+        
+    - name: 커버리지 업로드
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-${{ matrix.python-version }}
+
+  # 통합 테스트
+  integration-tests:
+    runs-on: ubuntu-latest
+    name: 통합 테스트
+    needs: unit-tests
+    
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_DB: power_market_rag_test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test123
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+          
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio
+        
+    - name: 환경 변수 설정
+      run: |
+        cp .env.example .env
+        echo "DATABASE_URL=postgresql://test:test123@localhost:5432/power_market_rag_test" >> .env
+        echo "REDIS_URL=redis://localhost:6379/0" >> .env
+        echo "JWT_SECRET_KEY=test-secret-key-for-ci" >> .env
+        
+    - name: 데이터베이스 초기화
+      run: |
+        python -c "
+        from database.connection import get_database_connection
+        from database.models import create_tables
+        create_tables()
+        "
+        
+    - name: 통합 테스트 실행
+      run: |
+        python test_basic.py
+        python test_cache_system.py
+        python test_monitoring_system.py
+
+  # Docker 이미지 빌드
+  docker-build:
+    runs-on: ubuntu-latest
+    name: Docker 이미지 빌드
+    needs: [code-quality, unit-tests]
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Docker 메타데이터 추출
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: power-market-rag
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=sha
+          
+    - name: Docker Buildx 설정
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Docker 이미지 빌드
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: false
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        
+    - name: Docker 이미지 테스트
+      run: |
+        docker run --rm power-market-rag:latest python -c "import sys; print(f'Python {sys.version}')"
+
+  # 보안 스캔
+  security-scan:
+    runs-on: ubuntu-latest
+    name: 보안 스캔
+    needs: docker-build
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Trivy 보안 스캔
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'power-market-rag:latest'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: 보안 스캔 결과 업로드
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  # 성능 테스트
+  performance-tests:
+    runs-on: ubuntu-latest
+    name: 성능 테스트
+    needs: integration-tests
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Python 환경 설정
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: 의존성 설치
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install locust pytest-benchmark
+        
+    - name: 성능 테스트 실행
+      run: |
+        python -c "
+        import time
+        from power_market_rag import RAGSystem
+        
+        # 기본 성능 테스트
+        rag = RAGSystem()
+        
+        start_time = time.time()
+        result = rag.query('전력시장 운영 규칙은?')
+        end_time = time.time()
+        
+        print(f'쿼리 응답 시간: {end_time - start_time:.2f}초')
+        print(f'응답 길이: {len(result)} 문자')
+        
+        # 응답 시간이 5초를 초과하면 실패
+        assert end_time - start_time < 5.0, '응답 시간이 너무 느립니다'
+        "
+
+  # 배포 (프로덕션)
+  deploy-production:
+    runs-on: ubuntu-latest
+    name: 프로덕션 배포
+    needs: [integration-tests, docker-build, security-scan]
+    if: github.event_name == 'release' && github.event.action == 'published'
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Docker Hub 로그인
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: Docker 이미지 빌드 및 푸시
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/power-market-rag:latest
+          ${{ secrets.DOCKER_USERNAME }}/power-market-rag:${{ github.event.release.tag_name }}
+          
+    - name: 배포 알림
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        text: '🚀 Power Market RAG v${{ github.event.release.tag_name }} 배포 완료!'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  # 배포 (스테이징)
+  deploy-staging:
+    runs-on: ubuntu-latest
+    name: 스테이징 배포
+    needs: [integration-tests, docker-build]
+    if: github.ref == 'refs/heads/develop'
+    environment: staging
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: 스테이징 서버 배포
+      run: |
+        echo "스테이징 서버로 배포 중..."
+        # 실제 배포 스크립트 실행
+        # ssh deployment@staging-server "cd /app && docker-compose pull && docker-compose up -d"
+        
+    - name: 헬스 체크
+      run: |
+        echo "헬스 체크 실행 중..."
+        # curl -f http://staging-server/health || exit 1
+
+  # 알림
+  notify:
+    runs-on: ubuntu-latest
+    name: 빌드 결과 알림
+    needs: [code-quality, unit-tests, integration-tests, docker-build]
+    if: always()
+    
+    steps:
+    - name: 성공 알림
+      if: ${{ needs.code-quality.result == 'success' && needs.unit-tests.result == 'success' && needs.integration-tests.result == 'success' && needs.docker-build.result == 'success' }}
+      run: |
+        echo "✅ 모든 CI/CD 단계가 성공적으로 완료되었습니다!"
+        
+    - name: 실패 알림
+      if: ${{ needs.code-quality.result == 'failure' || needs.unit-tests.result == 'failure' || needs.integration-tests.result == 'failure' || needs.docker-build.result == 'failure' }}
+      run: |
+        echo "❌ CI/CD 파이프라인에서 실패가 발생했습니다."
+        echo "코드 품질: ${{ needs.code-quality.result }}"
+        echo "단위 테스트: ${{ needs.unit-tests.result }}"
+        echo "통합 테스트: ${{ needs.integration-tests.result }}"
+        echo "Docker 빌드: ${{ needs.docker-build.result }}"

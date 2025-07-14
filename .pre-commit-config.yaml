@@ -1,0 +1,142 @@
+repos:
+  # 기본 훅들
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Python 코드 포맷팅
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--line-length=88]
+
+  # Import 정렬
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--line-length", "88"]
+
+  # 코드 품질 검사
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        args: [
+          '--max-line-length=88',
+          '--extend-ignore=E203,W503,E501',
+          '--exclude=venv,.venv,env,.env,migrations,vector_db'
+        ]
+
+  # 타입 힌트 검사
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.6.1
+    hooks:
+      - id: mypy
+        args: [--ignore-missing-imports, --no-strict-optional]
+        additional_dependencies: [types-PyYAML, types-redis, types-requests]
+
+  # 보안 검사
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-c', 'pyproject.toml']
+        additional_dependencies: ['bandit[toml]']
+
+  # 의존성 보안 검사
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.2
+    hooks:
+      - id: python-safety-dependencies-check
+        args: [--ignore=70612]  # 알려진 safe 이슈 무시
+
+  # Dockerfile 린트
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+        args: [--ignore, DL3008, --ignore, DL3009]
+
+  # YAML 포맷팅
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3
+    hooks:
+      - id: prettier
+        types_or: [yaml, markdown, json]
+        exclude: '^(vector_db/|logs/)'
+
+  # 커밋 메시지 검사
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.12.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+  # 테스트 실행
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: pytest
+        language: system
+        args: [tests/, -v, --tb=short]
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+
+  # 환경 파일 검사
+  - repo: local
+    hooks:
+      - id: env-check
+        name: 환경 파일 검사
+        entry: python
+        language: system
+        args: [-c, "
+          import os, sys;
+          env_file = '.env';
+          example_file = '.env.example';
+          if not os.path.exists(env_file):
+              print(f'❌ {env_file} 파일이 없습니다. {example_file}을 복사하여 생성하세요.');
+              sys.exit(1);
+          print('✅ 환경 파일 검사 완료');
+        "]
+        pass_filenames: false
+        always_run: true
+
+  # 민감한 정보 검사
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: '\.env\.example$'
+
+# CI에서만 실행할 추가 검사들
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: [pytest-check]
+  submodules: false

@@ -1,0 +1,136 @@
+rules:
+- annotations:
+    summary: CPU 사용률 {{ .value }}%가 임계값을 초과했습니다
+  channels:
+  - console
+  - email
+  condition: cpu.usage_percent > 80
+  description: CPU 사용률이 높습니다
+  duration: 300.0
+  firing_count: 0
+  labels:
+    component: system
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: cpu.usage_percent
+  name: high_cpu_usage
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: warning
+  state: inactive
+- annotations:
+    summary: '긴급: CPU 사용률 {{ .value }}%가 위험 수준입니다'
+  channels:
+  - console
+  - email
+  - slack
+  condition: cpu.usage_percent > 95
+  description: CPU 사용률이 매우 높습니다
+  duration: 120.0
+  firing_count: 0
+  labels:
+    component: system
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: cpu.usage_percent
+  name: critical_cpu_usage
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: critical
+  state: inactive
+- annotations:
+    summary: 메모리 사용률 {{ .value }}%가 임계값을 초과했습니다
+  channels:
+  - console
+  - email
+  condition: memory.virtual.percent > 85
+  description: 메모리 사용률이 높습니다
+  duration: 300.0
+  firing_count: 0
+  labels:
+    component: system
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: memory.virtual.percent
+  name: high_memory_usage
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: warning
+  state: inactive
+- annotations:
+    summary: API 에러율 {{ .value }}%가 임계값을 초과했습니다
+  channels:
+  - console
+  - email
+  - slack
+  condition: api.error_rate > 0.05
+  description: API 에러율이 높습니다
+  duration: 180.0
+  firing_count: 0
+  labels:
+    component: api
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: api.error_rate
+  name: high_error_rate
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: error
+  state: inactive
+- annotations:
+    summary: API 평균 응답시간이 {{ .value }}초입니다
+  channels:
+  - console
+  - email
+  condition: api.avg_response_time > 2.0
+  description: API 응답 시간이 느립니다
+  duration: 300.0
+  firing_count: 0
+  labels:
+    component: api
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: api.avg_response_time
+  name: slow_response_time
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: warning
+  state: inactive
+- annotations:
+    summary: 캐시 히트율이 {{ .value }}%로 낮습니다
+  channels:
+  - console
+  - email
+  condition: cache.hit_rate < 50
+  description: 캐시 히트율이 낮습니다
+  duration: 600.0
+  firing_count: 0
+  labels:
+    component: cache
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: cache.hit_rate
+  name: cache_hit_rate_low
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: warning
+  state: inactive
+- annotations:
+    summary: RAG 평균 신뢰도가 {{ .value }}로 낮습니다
+  channels:
+  - console
+  - email
+  condition: rag.avg_confidence < 0.7
+  description: RAG 응답 신뢰도가 낮습니다
+  duration: 600.0
+  firing_count: 0
+  labels:
+    component: rag
+  last_triggered: null
+  max_alerts_per_day: 10
+  metric_name: rag.avg_confidence
+  name: rag_confidence_low
+  repeat_interval: 3600.0
+  resolved_at: null
+  severity: warning
+  state: inactive
